@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "Masker",
+  "description": "This extension ensures that your stylographic style is unique per domain.",
+  "version": "1.0",
+
+  // "permissions": [ "background", "activeTab"],
+
+  // "background":{
+  //   "scripts":["background.js"]
+
+  // },
+
+  // "browser_action": {
+  //   "default_icon": "icon.png",
+  // },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-2.1.1.min.js", "nym.js"],
+      "css": ["nym.css"],
+      "run_at":"document_end"
+    }
+  ],
+  "web_accessible_resources": [
+       "privacy.png"
+  ]
+}
